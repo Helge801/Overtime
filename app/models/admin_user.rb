@@ -1,0 +1,2 @@
+calss AdminUser < User
+end
