@@ -1,2 +1,2 @@
-calss AdminUser < User
+class AdminUser < User
 end
