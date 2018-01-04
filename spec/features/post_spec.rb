@@ -31,11 +31,9 @@ describe 'navigate' do
  describe 'creation' do
 
     before do
-      p "*" * 50
-      p @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
+      @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
       login_as(@user)
       visit new_post_path
-      p "*" * 50
     end
 
     it 'has a new form that can be reached' do
@@ -60,4 +58,30 @@ describe 'navigate' do
       expect(User.last.posts.last.rationale).to eq("User Association")
     end
   end 
+
+  describe 'edit' do
+
+    before do
+      @post = FactoryGirl.create(:post)
+    end
+
+    it 'can be reached by clicking edit on index page' do
+      post = FactoryGirl.create(:post)
+      visit posts_path
+
+      click_link("edit_#{post.id}")
+      expect(page.status_code).to eq(200)
+    end
+
+    it 'can be edited' do
+      visit edit_post_path(@post)
+      fill_in 'post[date]', with: Date.today
+      fill_in 'post[rationale]', with: "Edited content"
+      click_on "Save"
+
+      expect(page).to have_content("Edited content")
+    end
+
+  end
+
 end
