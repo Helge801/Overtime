@@ -1,5 +1,7 @@
 @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
 
+User.create(email: "goodbye@goodbye.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow", type: "AdminUser")
+
 puts '*' * 50
 puts "1 User created"
 puts '*' * 50
