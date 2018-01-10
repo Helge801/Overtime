@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
+    if @post.update!(post_params)
       redirect_to @post, notice: 'your post was updated successfully'
     else
       render :edit
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:date, :rationale)
+    params.require(:post).permit(:date, :rationale, :status)
   end
 
   def set_post
