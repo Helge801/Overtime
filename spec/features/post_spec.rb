@@ -83,7 +83,7 @@ describe 'navigate' do
       login_as(@edit_user, :scope => :user)
       @edit_post = Post.create(date: Date.today, rationale: "asdf", user_id: @edit_user.id)
     end
-
+    
     it 'can be edited' do
       visit edit_post_path(@edit_post)
 
