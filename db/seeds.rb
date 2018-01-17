@@ -4,11 +4,22 @@ def em str
   puts '*' * 50
 end
 
-@user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
+@user = User.create(email: "test@test.com",
+                    password: "asdfasdf",
+                    password_confirmation: "asdfasdf",
+                    first_name: "Jon",
+                    last_name: "Snow",
+                    phone:"8013168771")
 
 em "1 Regular User created."
 
-User.create(email: "goodbye@goodbye.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow", type: "AdminUser")
+User.create(email: "goodbye@goodbye.com",
+            password: "asdfasdf",
+            password_confirmation: "asdfasdf",
+            first_name: "Jon",
+            last_name: "Snow",
+            type: "AdminUser",
+            phone:"8013168771")
 
 em "1 Admin User created"
 
