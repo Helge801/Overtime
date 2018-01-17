@@ -19,3 +19,5 @@ config/secrets.yml
 /yarn-error.log
 
 .byebug_history
+/.env
+
