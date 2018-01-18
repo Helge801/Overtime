@@ -1,0 +1,20 @@
+Gaol for audit log:
+Keep track of if an employee had overtime or not
+
+Dependencies"
+ - User
+
+Attrs:
+ - status:integer (enum) -> pending, complete
+ - start_data:date -> default previous Monday
+ - date_verified
+
+
+
+ Monday
+ |
+ |
+ |
+ Sunday ---- notification
+
+ rails g resource AuditLog user:references status:integer start_date:date
