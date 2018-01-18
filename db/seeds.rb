@@ -31,3 +31,13 @@ em "1 Admin User created"
 end
 
 em "100 Posts have been created"
+
+em "Creating audit logs"
+
+100.times do |audit_log|
+  al = AuditLog.create!(user_id: [1,2].sample, status: 0, start_date: (Date.today - 6.days))
+
+  puts "Audit log: #{al.id} created for User: #{al.user.id}"
+end
+
+em "100 Audit Logs created"
