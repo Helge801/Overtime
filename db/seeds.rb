@@ -26,7 +26,7 @@ em "1 Admin User created"
 
 
 100.times do |post|
-  Post.create!(date: Date.today, rationale: "#{post} rationale content", user_id: [1,2].sample, overtime_request: 2.5)
+  Post.create!(date: Date.today, rationale: "#{post} rationale content", user_id: [1,2].sample, overtime_request: 2.5, status: [1,0].sample)
   puts "created post #{post + 1}"
 end
 
@@ -35,7 +35,7 @@ em "100 Posts have been created"
 em "Creating audit logs"
 
 100.times do |audit_log|
-  al = AuditLog.create!(user_id: [1,2].sample, status: 0, start_date: (Date.today - 6.days))
+  al = AuditLog.create!(user_id: [1,2].sample, status: 0, start_date: (Date.today - 6.days), status: [1,0].sample)
 
   puts "Audit log: #{al.id} created for User: #{al.user.id}"
 end
