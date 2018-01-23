@@ -34,10 +34,15 @@ em "100 Posts have been created"
 
 em "Creating audit logs"
 
-100.times do |audit_log|
-  al = AuditLog.create!(user_id: [1,2].sample, status: 0, start_date: (Date.today - 6.days), status: [1,0].sample)
+# 100.times do |audit_log|
+#   al = AuditLog.create!(user_id: [1,2].sample, status: 0, start_date: (Date.today - 6.days), status: [1,0].sample)
 
-  puts "Audit log: #{al.id} created for User: #{al.user.id}"
-end
+#   puts "Audit log: #{al.id} created for User: #{al.user.id}"
+# end
+
+AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 6.days))
+AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 13.days))
+AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 20.days))
+
 
 em "100 Audit Logs created"
