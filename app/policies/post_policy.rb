@@ -7,6 +7,10 @@ class PostPolicy < ApplicationPolicy
 
   private
 
+    def approve
+      admin?
+    end
+
     def user_or_admin
       record.user_id == user.id || admin?
     end
