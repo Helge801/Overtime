@@ -4,7 +4,7 @@ class AuditLog < ApplicationRecord
   before_update :set_end_date, if: :confirmed?
   validates_presence_of :user_id, :status, :start_date
   after_initialize :set_defaults
-
+  scope :by_start_date, -> { order('start_date DESC') }
   private
 
   def set_end_date
