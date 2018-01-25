@@ -1,20 +1,10 @@
-Gaol for audit log:
-Keep track of if an employee had overtime or not
-
-Dependencies"
- - User
-
-Attrs:
- - status:integer (enum) -> pending, complete
- - start_data:date -> default previous Monday
- - date_verified
-
-
-
- Monday
- |
- |
- |
- Sunday ---- notification
-
- rails g resource AuditLog user:references status:integer start_date:date
+Update the end date when an audit log is confirmed.
+Update audit log status when an overtime is rejected.
+# Add a home icon for the homepage
+Update buttons on employee homepage so they show on mobile.
+Add the full date range in each button.
+Update button sort order on employee homepage
+Remove "entries" and "Request overtime" buttons for managers.
+Fix a bug in admin dashboard. I think this should be more a configuration setting we need to update.
+Implement honeybadger for error reporting
+Implement new relic for keeping the site alive
