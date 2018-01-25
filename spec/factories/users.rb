@@ -21,12 +21,12 @@ FactoryGirl.define do
     phone "8013168771"
   end
 
-  factory :non_authorized_user, class: "User" do
-  first_name 'Non'
-  last_name 'Authorized'
-  email { generate :email }
-  password "asdfasdf"
-  password_confirmation "asdfasdf"
-  phone "8013168771"
-end
+    factory :non_authorized_user, class: "User" do
+    first_name 'Non'
+    last_name 'Authorized'
+    email { generate :email }
+    password "asdfasdf"
+    password_confirmation "asdfasdf"
+    phone "8013168771"
+  end
 end
